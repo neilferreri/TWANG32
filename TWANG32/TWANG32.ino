@@ -9,6 +9,7 @@
 	It was inspired by Robin Baumgarten's Line Wobbler Game
 	
 	Recent Changes
+  - Fixed issue with sound not resuming after pause for EEPROM write (neilferreri)
 	- Updated to move FastLEDshow to core 0
 	Fixed Neopixel
 	  - Used latest FastLED library..added compile check
@@ -29,10 +30,10 @@
 
 // 
 
-#define VERSION "2018-06-28"
+#define VERSION "2025-01-18"
 
 #include <FastLED.h>
-#include<Wire.h>
+#include <Wire.h>
 #include "Arduino.h"
 #include "RunningMedian.h"
 
@@ -46,8 +47,8 @@
 #include "boss.h"
 #include "conveyor.h"
 #include "iSin.h"
-#include "sound.h"
 #include "settings.h"
+#include "sound.h"
 #include "wifi_ap.h"
 
 #if defined(FASTLED_VERSION) && (FASTLED_VERSION < 3001000)
@@ -1443,5 +1444,3 @@ void juggle() {
     dothue += 64;
   }
 }
-
-

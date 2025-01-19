@@ -2,7 +2,7 @@
 #include "settings.h"
 
 const char* ssid     = "TWANG_AP";
-const char* passphrase = "12345678";
+const char* passphrase = "11235811";
 
 WiFiServer server(80);
 
@@ -165,7 +165,7 @@ void ap_client_check(){
 				// you're starting a new line
 				currentLineIsBlank = true;
 
-				if (strstr(linebuf,"GET /?") > 0)
+				if (strstr(linebuf,"GET /?") > (char *)0)
 				{
 					String line = String(linebuf);
 
